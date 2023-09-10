@@ -219,6 +219,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "createRandomArtWork",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "tokenId",
 						"type": "uint256"
@@ -230,6 +243,92 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getArtWorks",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "dna",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "level",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "rarity",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct ArtToken.Art[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getOwnerArtWork",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "dna",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "level",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "rarity",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct ArtToken.Art[]",
+						"name": "",
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -497,6 +596,13 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -667,11 +773,11 @@
 			]
 		},
 		"art.sol": {
-			"keccak256": "0xf476c9b9cab066f562c1138673c0f3615c3331a6e845f4262cd85e499269fb69",
+			"keccak256": "0xfbc491db296286ac02036d9e50f34c1896aa314da007bff8622bce65ecf7d369",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1c52b0e8579abbd87a3129084d30f139042025f61452de02489392a69c197bb6",
-				"dweb:/ipfs/QmWcK1vqH9v5gjUP8osqDf5vg7fXCE9VFcyTu1CnJednKd"
+				"bzz-raw://c0b87c37f40d87ebad17f059cad049090b00500a1047173686378a44dc1b47c7",
+				"dweb:/ipfs/QmXe593rZ9kwHRJG5VXxYtNZUDx7R4MZaWR42BEuPnoYjy"
 			]
 		}
 	},
