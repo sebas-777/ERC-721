@@ -46,6 +46,17 @@ contract ArtToken is ERC721,Ownable {
         uint256 randonNum = uint256(has_randomNum);
         return randonNum % _mod;
 
+    } 
+
+    //NFT  Token Creation (Artwork)
+    function _createArtWork(string memory _name) internal  {
+        uint8 randRarity = uint8(_createRandomNum(1000));
+        uint256 randDna = _createRandomNum(10**16);
+        Art memory newArtWork = Art(_name,COUNTER,randDna,1,randRarity);
+        art_works.push(newArtWork);
+        _safeMint(msg.sender,COUNTER);
+        emit NewArtWork(msg.sender,COUNTER,randDna);
+        COUNTER++;
     }
 
     
