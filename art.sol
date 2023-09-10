@@ -57,7 +57,41 @@ contract ArtToken is ERC721,Ownable {
         _safeMint(msg.sender,COUNTER);
         emit NewArtWork(msg.sender,COUNTER,randDna);
         COUNTER++;
+    } 
+
+    //NFT Token Price Update 
+    function updateFee(uint256 _fee) external onlyOwner {
+        fee = _fee;
+    } 
+
+    // Visualizar the balance of the Smart Contract (ethers)
+    function infoSmartContract() public view returns (address,uint256){
+        address SC_address = address(this);
+        uint256 SC_money = address(this).balance / 10**18;
+        return (SC_address,SC_money);
     }
+
+   //Obtaining all created NFT tokens (artwork)
+   function getArtWorks() public view  returns(Art [] memory) {
+       return art_works;
+   } 
+
+    //Obtaining a user´s NFT tokens 
+    function getOwnerArtWork(address _owner)  public view returns (Art [] memory) {
+        Art [] memory result = new Art[](balanceOf(_owner));
+        uint256 counter_owner = 0;
+        for (uint256 i = 0; i < art_works.length; i++){
+            if (ownerOf(i) == _owner){
+               result[counter_owner] = art_works[i];
+               counter_owner++; 
+            }
+        } 
+        return  result;
+    } 
+
+    //============================================================
+    // NFT Token Development
+    //============================================================ 
 
     
 }
