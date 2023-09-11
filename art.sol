@@ -102,6 +102,13 @@ contract ArtToken is ERC721,Ownable {
      function  withdraw() external payable onlyOwner {
          address payable  _owner = payable(owner());
          _owner.transfer(address(this).balance);
+     } 
+
+     //Level up NFT Tokens
+     function levelUp(uint256 _artId) public {
+         require(ownerOf(_artId) == msg.sender);
+         Art storage art = art_works[_artId];
+         art.level++;
      }
 
     
